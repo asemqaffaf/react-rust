@@ -1,6 +1,6 @@
 // DataProcessor.tsx
 import React, { useState, useEffect } from 'react';
-import init, { DataProcessor } from '../pkg';
+import init, { DataProcessor } from '../rust-src/pkg';
 
 interface ProcessedData {
   originalData: number[];
@@ -13,7 +13,7 @@ interface ProcessedData {
 }
 
 const DataProcessorComponent: React.FC = () => {
-  const [wasmModule, setWasmModule] = useState<typeof import('../pkg')>();
+  const [wasmModule, setWasmModule] = useState<typeof import('../rust-src/pkg')>();
   const [inputData, setInputData] = useState<string>('');
   const [processedData, setProcessedData] = useState<ProcessedData | null>(null);
   const [error, setError] = useState<string>('');
